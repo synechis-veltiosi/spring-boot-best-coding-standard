@@ -1,4 +1,4 @@
 package com.example.demo.api.model.request;
 
-public class ProductRequest {
+public record ProductRequest(String name, double price) {
 }

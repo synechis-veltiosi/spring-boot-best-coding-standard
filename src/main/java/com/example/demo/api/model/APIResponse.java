@@ -1,4 +1,6 @@
 package com.example.demo.api.model;
 
-public class APIResponse {
+
+public record APIResponse<T>(T data, String message, int status) {
+
 }

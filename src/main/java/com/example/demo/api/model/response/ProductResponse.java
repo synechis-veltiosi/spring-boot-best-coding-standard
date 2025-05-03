@@ -1,4 +1,4 @@
 package com.example.demo.api.model.response;
 
-public class ProductResponse {
+public record ProductResponse(Long id, String name, double price, String status) {
 }
