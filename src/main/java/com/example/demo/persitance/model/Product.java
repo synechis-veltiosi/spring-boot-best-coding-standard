@@ -9,11 +9,11 @@ import lombok.*;
 import java.io.Serializable;
 
 @Entity
-@Getter
 @Setter
+@Getter
+@AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@AllArgsConstructor
 public class Product implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

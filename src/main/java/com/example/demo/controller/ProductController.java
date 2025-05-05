@@ -27,13 +27,13 @@ public class ProductController {
     }
 
     // get product by id
-    @GetMapping(value = "/get/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<APIResponse<ProductResponse>> getProductById(@PathVariable Long id) {
         ProductResponse productResponse = productService.fetchProductById(id);
         return new ResponseEntity<>(new APIResponse<>(productResponse, "Success", HttpStatus.OK.value()), HttpStatus.OK);
     }
     // add product
-    @PostMapping(value = "/create",consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<APIResponse<ProductResponse>> createProduct(@RequestBody ProductRequest productRequest) {
         ProductResponse productResponse = productService.addProduct(productRequest);
         return new ResponseEntity<>(new APIResponse<>(productResponse, "Success", HttpStatus.CREATED.value()), HttpStatus.CREATED);

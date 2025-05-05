@@ -19,7 +19,8 @@ public class ProductItemService implements ProductService {
     @Override
     public List<ProductResponse> fetchAllProducts() {
         return productRepository.findAll().stream()
-                .map(product -> new ProductResponse(product.getId(), product.getName(), product.getPrice(),product.getStatus()))
+                .map(product -> new ProductResponse(product.getId(), product.getName(),
+                product.getPrice(),product.getStatus()))
                 .toList();
     }
 
